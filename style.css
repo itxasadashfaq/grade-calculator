@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+.container {
+  background: white;
+  padding: 35px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 650px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+h1 {
+  text-align: center;
+  color: #1a1a2e;
+  margin-bottom: 25px;
+  font-size: 26px;
+}
+
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  min-width: 120px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #4a90e2;
+}
+
+button {
+  padding: 10px 18px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #357abd;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+thead {
+  background: #1a1a2e;
+  color: white;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+tbody tr:hover {
+  background: #f0f6ff;
+}
+
+td button {
+  background: #dc3545;
+  padding: 5px 12px;
+  font-size: 12px;
+}
+
+td button:hover {
+  background: #a71d2a;
+}
+
+.result {
+  background: #f0f6ff;
+  border-left: 5px solid #4a90e2;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #1a1a2e;
+  display: none;
+}
+
+#calculateBtn {
+  background: #28a745;
+  margin-right: 10px;
+}
+
+#calculateBtn:hover {
+  background: #1e7e34;
+}
+
+#clearBtn {
+  background: #dc3545;
+}
+
+#clearBtn:hover {
+  background: #a71d2a;
+}
+
+.grade-A { color: #28a745; font-weight: bold; }
+.grade-B { color: #4a90e2; font-weight: bold; }
+.grade-C { color: #ffc107; font-weight: bold; }
+.grade-D { color: #fd7e14; font-weight: bold; }
+.grade-F { color: #dc3545; font-weight: bold; }
