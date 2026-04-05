@@ -54,3 +54,49 @@ function getGrade(marks) {
   if (marks >= 50) return "D";
   return "F";
 }
+// GC-4: Calculate Grade & GPA Feature
+
+document.getElementById("calculateBtn").addEventListener("click", calculateGPA);
+document.getElementById("clearBtn").addEventListener("click", clearAll);
+
+function calculateGPA() {
+  if (subjects.length === 0) {
+    alert("⚠️ Please add at least one subject!");
+    return;
+  }
+
+  const total = subjects.reduce((sum, s) => sum + s.marks, 0);
+  const average = (total / subjects.length).toFixed(2);
+  const overallGrade = getGrade(average);
+
+  let gpa = 0;
+  if (average >= 90) gpa = 4.0;
+  else if (average >= 80) gpa = 3.5;
+  else if (average >= 70) gpa = 3.0;
+  else if (average >= 60) gpa = 2.5;
+  else if (average >= 50) gpa = 2.0;
+  else gpa = 0.0;
+
+  const result = document.getElementById("result");
+  result.style.display = "block";
+  result.innerHTML = `
+    📊 Total Subjects: ${subjects.length} |
+    📈 Average Marks: ${average}% |
+    🎓 Overall Grade: ${overallGrade} |
+    ⭐ GPA: ${gpa}
+  `;
+}
+
+function deleteSubject(id) {
+  subjects = subjects.filter(s => s.id !== id);
+  const row = document.getElementById(`row-${id}`);
+  if (row) row.remove();
+  document.getElementById("result").style.display = "none";
+}
+
+function clearAll() {
+  subjects = [];
+  counter = 1;
+  document.getElementById("tableBody").innerHTML = "";
+  document.getElementById("result").style.display = "none";
+}
